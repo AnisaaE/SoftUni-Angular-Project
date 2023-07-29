@@ -1,33 +1,4 @@
-Global styles
-* {
-    padding: 0;
-    margin: 0;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-body {
-    
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  button {
-    cursor: pointer;
-  }
-  .container {
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    height: 70vh; /* Set the height of the container to the full viewport height */
-  }
-  .container .main_div{
+.container .main_div{
     width: 365px;
     background: #fff;
     padding: 30px;

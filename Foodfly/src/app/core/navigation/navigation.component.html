@@ -1,0 +1,32 @@
+<nav>
+  <a routerLink="/home">
+    <div class="logo">
+      <img
+        src="https://png.pngtree.com/png-clipart/20220903/ourmid/pngtree-chef-hat-and-cooking-logo-png-image_6136205.png"
+        alt="logo"
+      />
+      <span>Foodfly</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/catalog">Catalog</a>
+
+    <!-- Conditionally render links based on the value of "isAuth" -->
+    <!-- If "isAuth" is true -->
+    <!-- <ng-container *ngIf="isAuth; else notAuthenticatedLinks"> -->
+      <a routerLink="/create">Create Recipe</a>
+      <a routerLink="/profile">My Profile</a>
+      <p class="nav-user">Welcome, Chef {{ userUsername }}</p>
+      <a routerLink="/logout">Logout</a>
+    <!-- </ng-container> -->
+
+    <!-- If "isAuth" is false -->
+    <!-- <ng-template #notAuthenticatedLinks> -->
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    <!-- </ng-template> -->
+  </div>
+  <!-- <Search /> -->
+</nav>

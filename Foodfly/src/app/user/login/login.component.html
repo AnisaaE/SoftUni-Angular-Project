@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="flex-container">
+      <div class="form-container">
+        <div class="main_div">
+          <div class="title">Login Form</div>
+          <!-- <form (ngSubmit)="handleSubmit()" [formGroup]="loginForm"> -->
+            <form >
+                <div class="input_box">
+              <input
+                type="text"
+                formControlName="email"
+                placeholder="Email..."
+                required
+              />
+              <div class="icon">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            <div class="input_box">
+              <input
+                type="password"
+                formControlName="password"
+                placeholder="Password"
+                required
+              />
+              <div class="icon">
+                <i class="fas fa-lock"></i>
+              </div>
+            </div>
+            <div class="input_box button_login">
+              <input type="submit" value="Login" />
+            </div>
+            <div class="sign_up">
+              Not a member?
+              <a routerLink="/register">Sign up now</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- <div class="error-container">
+        <div *ngIf="showNotification">
+          <app-notification
+            [message]="errors[0]"
+            [type]="'error'"
+            [duration]="2000"
+          ></app-notification>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  
