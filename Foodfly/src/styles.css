@@ -21,13 +21,13 @@ body {
   button {
     cursor: pointer;
   }
-  .container {
+  /* .container {
     display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    height: 70vh; /* Set the height of the container to the full viewport height */
-  }
-  .container .main_div{
+    justify-content: center;
+    align-items: center; 
+    height: 70vh; 
+  } */
+  /* .container .main_div{
     width: 365px;
     background: #fff;
     padding: 30px;
@@ -121,4 +121,4 @@ body {
   }
   form a:hover{
     text-decoration: underline;
-  }
+  } */

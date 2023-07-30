@@ -10,7 +10,12 @@
     font-size: 30px;
     font-weight: 600;
   }
-  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 70vh; 
+  }
   form {
     margin-top: 25px;
   }
@@ -54,6 +59,7 @@
   .input_box input:focus{
     border-color:  #f4d340;
   }
+
   .input_box .icon{
     position: absolute;
     top: 50%;
@@ -79,7 +85,11 @@
     font-size: 16px;
     color:  #f4d340;
   }
-  
+  .custom-button {
+    background-color: #f4d340; /* Replace with your desired background color */
+    color: #ffffff; /* Replace with your desired text color */
+    /* Add any other styles you want for the button */
+  }
   form .sign_up{
     text-align: center;
     margin-top: 25px;
