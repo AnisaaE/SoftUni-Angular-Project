@@ -5,6 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AboutComponent } from './about/about.component';
+import { CatalogComponent } from './recipe/catalog/catalog.component';
 
 const routes: Routes = [
    {
@@ -12,10 +13,11 @@ const routes: Routes = [
   pathMatch: 'full',
   redirectTo: '/home',
 },
-{
-  path: 'home',
-  component: HomeComponent,
-},
+{ path: 'home', component: HomeComponent },
+{ path: 'catalog', component: CatalogComponent },
+
+
+
 { path: 'about', component: AboutComponent },
 { path: 'login', component: LoginComponent },
 { path: 'register', component: RegisterComponent },

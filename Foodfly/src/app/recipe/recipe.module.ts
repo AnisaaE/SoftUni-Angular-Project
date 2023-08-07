@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatalogComponent } from './catalog/catalog.component';
+import { DetailComponent } from './detail/detail.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
-    CatalogComponent
+    CatalogComponent,
+    DetailComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule, RouterModule
+  ],
+  exports:[CatalogComponent, DetailComponent]
 })
 export class RecipeModule { }

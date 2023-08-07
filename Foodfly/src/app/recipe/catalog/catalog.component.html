@@ -1,1 +1,14 @@
-<p>catalog works!</p>
+<div>
+    <h2 class="recipe">All recipes</h2>
+    <div class="recipe-catalog">
+        <div *ngFor="let recipe of recipes">
+            <div class="recipe-card">
+              <img [src]="recipe.image" alt="Recipe Image" />
+              <h3 class="recipe-title">{{ recipe.title }}</h3>
+              <a routerLink="/catalog" class="recipe-button">Details</a>
+            </div>
+          </div>
+
+        <h3 class="no-articles" *ngIf="recipes.length === 0">No articles yet</h3>
+    </div>
+</div>
