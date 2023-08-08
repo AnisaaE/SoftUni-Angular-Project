@@ -7,6 +7,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './recipe/catalog/catalog.component';
 import { DetailComponent } from './recipe/detail/detail.component';
+import { CreateComponent } from './recipe/create/create.component';
 
 const routes: Routes = [
    {
@@ -17,6 +18,7 @@ const routes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'catalog', component: CatalogComponent },
 {path:'catalog/:recipeId' , component:DetailComponent},
+{ path: 'create', component: CreateComponent },
 
 
 { path: 'about', component: AboutComponent },

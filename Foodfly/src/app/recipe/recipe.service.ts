@@ -20,4 +20,9 @@ export class RecipeService {
     const { appUrl } = environment;
     return this.http.get<Recipe>(`${appUrl}/data/recipes/${id}`);
   }
+
+  createRecipe(data:any) {
+    const { appUrl } = environment;
+    return this.http.post<Recipe>(`${appUrl}/data/recipes`, data);
+  }
 }

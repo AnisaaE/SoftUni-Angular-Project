@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 import { TypesOfRecipiesComponent } from './catalog/types-of-recipies/types-of-recipies.component';
 import { CommentComponent } from './detail/comment/comment.component';
 import { DeleteComponent } from './detail/delete/delete.component';
+import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
+import { ImgUrlValidatorDirective } from './img-url-validator.directive';
 
 
 @NgModule({
@@ -14,10 +17,12 @@ import { DeleteComponent } from './detail/delete/delete.component';
     DetailComponent,
     TypesOfRecipiesComponent,
     CommentComponent,
-    DeleteComponent
+    DeleteComponent,
+    CreateComponent,
+    ImgUrlValidatorDirective
   ],
   imports: [
-    CommonModule, RouterModule,
+    CommonModule, RouterModule,FormsModule
   ],
   exports:[CatalogComponent, DetailComponent]
 })

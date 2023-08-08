@@ -23,9 +23,10 @@ export class DetailComponent implements OnInit{
 
   fetchRecipe(): void {
     const id = this.activatedRoute.snapshot.params['recipeId'];
-    this.recipeServer.getRecipe(id).subscribe((item) => {
+    this.recipeServer.getRecipe(id).subscribe({
+      next:(item) => {
       this.recipe= item;
-       console.log(this.recipe)
+       console.log(this.recipe)}
     });
    
 }

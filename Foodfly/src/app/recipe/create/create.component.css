@@ -1,9 +1,13 @@
+.container{
+    margin:80px
+}
 .container .main_div{
     width: 365px;
     background: #fff;
     padding: 30px;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    margin: 50px;
   }
   .container .main_div .title{
     text-align: center;
@@ -59,6 +63,7 @@
   .input_box input:focus{
     border-color:  #f4d340;
   }
+
   .input_box .icon{
     position: absolute;
     top: 50%;
@@ -84,11 +89,30 @@
     font-size: 16px;
     color:  #f4d340;
   }
-  .custom-button {
-    background-color: #f4d340; /* Replace with your desired background color */
-    color: #ffffff; /* Replace with your desired text color */
-    /* Add any other styles you want for the button */
+  .custom-button-container {
+    display: flex;
+    justify-content: center;
   }
+  
+  .custom-button {
+    background-color: #f4d340;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-button:hover {
+    background-color: #ffca28;
+    transform: translateY(-2px);
+  }
+  
   form .sign_up{
     text-align: center;
     margin-top: 25px;
@@ -96,9 +120,9 @@
   .sign_up a{
     color: #ddc02e;
   }
-  form a{
+  form a, button{
     text-decoration: none;
   }
-  form a:hover{
+  form a,button:hover{
     text-decoration: underline;
   }
