@@ -1,1 +1,74 @@
-<p>detail works!</p>
+<div class="containerDetails">
+    <div class="active-recipe">
+      <img class="active-recipe__img" [src]="recipe?.image" [alt]="recipe?.title" />
+      <h3 class="active-recipe__title">{{ recipe?.title }}</h3>
+  
+      <ul class="active-recipe__metadata-list">
+        <li>
+          <strong>Ingredients: </strong>
+          {{ recipe?.ingredients }}
+        </li>
+        <li>
+          <strong>Cooking time: </strong>
+          {{ recipe?.timing }} min
+        </li>
+        <li>
+          <strong>Category: </strong>
+          <a [routerLink]="['/catalog/type', recipe?.type]" class="catalog-link"> 
+            {{ recipe?.type }} 
+          </a>
+        </li>
+        <li>
+          <strong>Servings: </strong> 
+          {{ recipe?.portions }} people
+        </li>
+        <li>
+          <strong>Method of preparation: </strong>
+          {{ recipe?.preparation }}
+        </li>
+      </ul>
+  
+      <!-- <ng-container *ngIf="isOwner">
+        <div class="active-recipe__actions">
+          <button class="active-recipe__edit-button">
+            <a [routerLink]="['/catalog', recipeId, 'edit']">Edit</a>
+          </button>
+          <button
+            class="active-recipe__delete-button"
+            (click)="confirmationDelete()"
+          >
+            Delete
+          </button>
+          <app-delete-recipe-modal
+            [recipe]="recipe"
+            (onDelete)="onDelete()"
+          ></app-delete-recipe-modal>
+        </div>
+      </ng-container> -->
+  
+      <div class="active-recipe__comments">
+        <h4>Comments:</h4>
+        <ul class="active-recipe__comment-list">
+          <ng-container *ngIf="recipe?.comments && recipe?.comments.length > 0; else noComments">
+            <li
+              *ngFor="let comment of recipe.comments"
+              class="active-recipe__comment-item"
+            >
+              <p>{{ comment.comment }}</p>
+              <ng-container *ngIf="isOwner || comment._ownerId === userId">
+                <button
+                  class="active-recipe__delete-button_comment"
+                  (click)="onDeleteComment(comment._id)"
+                >
+                  Delete
+                </button>
+              </ng-container>
+            </li>
+          </ng-container>
+          <ng-template #noComments><li>No comments yet...</li></ng-template>
+        </ul>
+        <app-add-comment *ngIf="isAuth" (onCommentSubmit)="onCommentSubmit()"></app-add-comment>
+      </div>
+    </div>
+  </div>
+  

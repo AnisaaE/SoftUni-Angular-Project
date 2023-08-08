@@ -1,3 +1,4 @@
+<app-types-of-recipies/>
 <div>
     <h2 class="recipe">All recipes</h2>
     <div class="recipe-catalog">
@@ -5,7 +6,7 @@
             <div class="recipe-card">
               <img [src]="recipe.image" alt="Recipe Image" />
               <h3 class="recipe-title">{{ recipe.title }}</h3>
-              <a routerLink="/catalog" class="recipe-button">Details</a>
+              <a [routerLink]="'/catalog/' + recipe._id" class="recipe-button">Details</a>
             </div>
           </div>
 

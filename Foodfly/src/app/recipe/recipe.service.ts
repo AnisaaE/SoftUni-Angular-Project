@@ -18,6 +18,6 @@ export class RecipeService {
   
   getRecipe(id: string) {
     const { appUrl } = environment;
-    return this.http.get<Recipe[]>(`${appUrl}/data/recipes${id}`);
+    return this.http.get<Recipe>(`${appUrl}/data/recipes/${id}`);
   }
 }

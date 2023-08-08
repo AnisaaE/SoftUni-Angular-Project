@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/types/recipe';
 import { RecipeService } from '../recipe.service';
+import { TypesOfRecipiesComponent } from './types-of-recipies/types-of-recipies.component';
 
 @Component({
   selector: 'app-catalog',

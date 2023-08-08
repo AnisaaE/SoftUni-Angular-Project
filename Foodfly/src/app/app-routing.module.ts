@@ -6,6 +6,7 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './recipe/catalog/catalog.component';
+import { DetailComponent } from './recipe/detail/detail.component';
 
 const routes: Routes = [
    {
@@ -15,7 +16,7 @@ const routes: Routes = [
 },
 { path: 'home', component: HomeComponent },
 { path: 'catalog', component: CatalogComponent },
-
+{path:'catalog/:recipeId' , component:DetailComponent},
 
 
 { path: 'about', component: AboutComponent },
