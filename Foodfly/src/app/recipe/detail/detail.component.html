@@ -28,10 +28,10 @@
         </li>
       </ul>
   
-      <!-- <ng-container *ngIf="isOwner">
+      <ng-container *ngIf="isOwner">
         <div class="active-recipe__actions">
           <button class="active-recipe__edit-button">
-            <a [routerLink]="['/catalog', recipeId, 'edit']">Edit</a>
+            <a [routerLink]="['/catalog/' + recipe?._id + '/edit']">Edit</a>
           </button>
           <button
             class="active-recipe__delete-button"
@@ -39,12 +39,9 @@
           >
             Delete
           </button>
-          <app-delete-recipe-modal
-            [recipe]="recipe"
-            (onDelete)="onDelete()"
-          ></app-delete-recipe-modal>
+         <app-delete *ngIf = "isOpen"></app-delete>
         </div>
-      </ng-container> -->
+      </ng-container>
   
       <div class="active-recipe__comments">
         <h4>Comments:</h4>
@@ -67,7 +64,7 @@
           </ng-container>
           <ng-template #noComments><li>No comments yet...</li></ng-template>
         </ul>
-        <!-- <app-add-comment *ngIf="isAuth" (onCommentSubmit)="onCommentSubmit()"></app-add-comment> -->
+        <app-comment *ngIf="isAuth"></app-comment>
       </div>
     </div>
   </div>

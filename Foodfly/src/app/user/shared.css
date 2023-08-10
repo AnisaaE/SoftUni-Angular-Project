@@ -14,7 +14,12 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    height: 70vh; 
+    height: 85vh; 
+    flex-direction: row;
+  }
+  .form-container{
+    display: flex;
+    flex-direction: column;
   }
   form {
     margin-top: 25px;
@@ -85,9 +90,8 @@
     color:  #f4d340;
   }
   .custom-button {
-    background-color: #f4d340; /* Replace with your desired background color */
-    color: #ffffff; /* Replace with your desired text color */
-    /* Add any other styles you want for the button */
+    background-color: #f4d340; 
+    color: #ffffff; 
   }
   form .sign_up{
     text-align: center;

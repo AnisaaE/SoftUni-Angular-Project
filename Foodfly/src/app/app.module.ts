@@ -9,6 +9,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipeModule } from './recipe/recipe.module';
+import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/shared.module';
+import { AuthorizationInterceptorProvider } from './app-interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+
 
 
 @NgModule({
@@ -17,15 +22,20 @@ import { RecipeModule } from './recipe/recipe.module';
     HomeComponent,
     NotFoundComponent,
     AboutComponent,
+    AuthenticateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
-    RecipeModule
+    RecipeModule,
+    UserModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    AuthorizationInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { DeleteComponent } from './detail/delete/delete.component';
 import { CreateComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
 import { ImgUrlValidatorDirective } from './img-url-validator.directive';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ImgUrlValidatorDirective } from './img-url-validator.directive';
     CommentComponent,
     DeleteComponent,
     CreateComponent,
-    ImgUrlValidatorDirective
+    ImgUrlValidatorDirective,
+    EditComponent
   ],
   imports: [
     CommonModule, RouterModule,FormsModule

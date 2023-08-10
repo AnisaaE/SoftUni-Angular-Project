@@ -1,1 +1,15 @@
-<p>comment works!</p>
+<div class="active-recipe__comments">
+    <ul class="active-recipe__comment-list"></ul>
+    <form #form="ngForm" class="active-recipe__comment-form" (ngSubmit)="handleSubmit(form)">
+      <textarea
+        class="active-recipe__comment-input"
+        name="comment"
+        ngModel
+        #commentInput="ngModel"
+        placeholder="Add a comment"
+        required
+      ></textarea>
+      <button class="active-recipe__comment-button" [disabled]="form.invalid" type="submit">Submit</button>
+    </form>
+  </div>
+  

@@ -10,7 +10,6 @@
               name="title"
               ngModel
              #titleInput="ngModel"
-             required
               placeholder="Title"
               minlength="4"
               required
@@ -20,10 +19,10 @@
             </div>
             <ng-container *ngIf="titleInput.touched">
                 <p class="error" *ngIf="titleInput.errors?.['required']">
-                  Theme name is required.
+                  Title name is required.
                 </p>
                 <p class="error" *ngIf="titleInput.errors?.['minlength']">
-                  Theme name must be at least 5 characters long.
+                  Title name must be at least 5 characters long.
                 </p>
               </ng-container>
           </div>
@@ -157,6 +156,9 @@
           <ng-container *ngIf="preparationInput.touched">
             <p class="error" *ngIf="preparationInput.errors?.['required']">
               Preparation is required.
+            </p>
+            <p class="error" *ngIf="preparationInput.errors?.['minlength']">
+              Theme name must be at least 35 characters long.
             </p>
           </ng-container>
           

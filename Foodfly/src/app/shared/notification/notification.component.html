@@ -1,0 +1,12 @@
+<!-- <div
+  class="notification"
+  [ngClass]="type"
+  [style.backgroundColor]="getBackgroundColor()"
+  [style.display]="isVisible ? 'block' : 'none'"
+>
+  {{ message }}
+</div> -->
+<div *ngIf="notification" class="notification" [ngClass]="notification.type">
+    {{ notification.message }}
+  </div>
+  

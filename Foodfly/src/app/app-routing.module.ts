@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './recipe/catalog/catalog.component';
 import { DetailComponent } from './recipe/detail/detail.component';
 import { CreateComponent } from './recipe/create/create.component';
+import { EditComponent } from './recipe/edit/edit.component';
 
 const routes: Routes = [
    {
@@ -18,6 +19,7 @@ const routes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'catalog', component: CatalogComponent },
 {path:'catalog/:recipeId' , component:DetailComponent},
+{path:'catalog/:recipeId/edit' , component:EditComponent},
 { path: 'create', component: CreateComponent },
 
 

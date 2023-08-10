@@ -8,21 +8,25 @@ import { environment } from 'src/enviroments/enviroment';
   providedIn: 'root'
 })
 export class RecipeService {
-  
+  private appUrl = 'http://localhost:3030/data/recipes';
   constructor(private http: HttpClient) { }
  
   getRecipes() {
-    const { appUrl } = environment;
-    return this.http.get<Recipe[]>(`${appUrl}/data/recipes`);
+    return this.http.get<Recipe[]>(`${this.appUrl}`);
   }
   
   getRecipe(id: string) {
-    const { appUrl } = environment;
-    return this.http.get<Recipe>(`${appUrl}/data/recipes/${id}`);
+    return this.http.get<Recipe>(`${this.appUrl}/${id}`);
   }
 
   createRecipe(data:any) {
-    const { appUrl } = environment;
-    return this.http.post<Recipe>(`${appUrl}/data/recipes`, data);
+    return this.http.post<Recipe>(`${this.appUrl}`, data);
   }
+  editRecipe(id:string, data:any){
+    return this.http.put<Recipe>(`${this.appUrl}/${id}`, data);
+  }
+
+  deleteRecipe = (recipeId:string) => this.http.delete(`${this.appUrl}/${recipeId}`);
+
+  isOpen: boolean= false
 }

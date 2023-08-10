@@ -13,20 +13,19 @@
     <a routerLink="/about">About</a>
     <a routerLink="/catalog">Catalog</a>
 
-    <!-- Conditionally render links based on the value of "isAuth" -->
-    <!-- If "isAuth" is true -->
-    <!-- <ng-container *ngIf="isAuth; else notAuthenticatedLinks"> -->
+    <ng-container *ngIf="isLoggedIn">
       <a routerLink="/create">Create Recipe</a>
       <a routerLink="/profile">My Profile</a>
-      <p class="nav-user">Welcome, Chef {{ userUsername }}</p>
-      <a routerLink="/logout">Logout</a>
-    <!-- </ng-container> -->
+      <p class="nav-user">Welcome, Chef {{ username }}</p>
+      <a href="#" (click)="logout()">Logout</a>
+    </ng-container> 
 
-    <!-- If "isAuth" is false -->
-    <!-- <ng-template #notAuthenticatedLinks> -->
+  
+    <ng-container *ngIf="!isLoggedIn">
       <a routerLink="/login">Login</a>
       <a routerLink="/register">Register</a>
-    <!-- </ng-template> -->
+    </ng-container> 
   </div>
   <!-- <Search /> -->
 </nav>
+<app-loader *ngIf="loading"></app-loader>
