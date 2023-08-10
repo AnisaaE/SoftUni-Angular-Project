@@ -3,5 +3,6 @@ export interface User{
     username:"string",
     hashedPassword: "string",
     accessToken:"string",
-    _id?:'string'
+    _id?:'string',
+
 }

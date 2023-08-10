@@ -1,14 +1,24 @@
+.containerDetails{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .active-recipe {
+   width: 80%;
     margin-top: 30px;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow:16px 16px 14px 8px rgba(0,0,0,0.2);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+  .active-recipe  {
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 12px 8px 15px 17px rgba(0,0,0,0); 
+box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 12px 8px 15px 17px rgba(0,0,0,0);
+}
   .active-recipe__img {
     width: 50%;
     height: 50%;
@@ -156,8 +166,37 @@
   .active-recipe__comments {
     margin-top: 40px;
     width: 100%;
+    border:#f68c1e solid 1px;
+    padding: 15px;
   }
-  
+  /* Add these styles to your global CSS file or component-specific CSS */
+.active-recipe__comments {
+  margin-top: 40px;
+  width: 100%;
+  border: #f68c1e solid 1px;
+  padding: 15px;
+}
+
+.active-recipe__comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.active-recipe__comment-item {
+  margin-bottom: 15px;
+  border-bottom: #ddd solid 1px;
+  padding-bottom: 10px;
+}
+
+.active-recipe__delete-button_comment {
+  background-color: #f68c1e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
   .active-recipe__comment-list {
     list-style: none;
     margin: 0;

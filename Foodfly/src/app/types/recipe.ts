@@ -11,10 +11,11 @@ export interface Recipe {
     _createdOn?: number;
     comments?: Comment[];
 }
-interface Comment {
+export interface Comment {
     _ownerId: string;
     recipeId: string;
     comment?: string;
     _createdOn?: number;
-    _id: string;
+    _id: string,
+    username: string
 }

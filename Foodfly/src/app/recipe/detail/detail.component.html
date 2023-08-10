@@ -44,22 +44,22 @@
       </ng-container>
   
       <div class="active-recipe__comments">
-        <h4>Comments:</h4>
+        <h2>Comments:</h2>
         <ul class="active-recipe__comment-list">
           <ng-container *ngIf="recipe && recipe.comments && recipe.comments.length > 0; else noComments">
             <li
               *ngFor="let comment of recipe?.comments"
               class="active-recipe__comment-item"
             >
-              <p>{{ comment.comment }}</p>
-              <!-- <ng-container *ngIf="isOwner || comment._ownerId === userId">
+              <p><b>{{comment.username}}</b>: {{ comment.comment }}</p>
+              <ng-container *ngIf="isOwner || comment._ownerId === userId">
                 <button
                   class="active-recipe__delete-button_comment"
-                  (click)="onDeleteComment(comment._id)"
+                 (click)="onDeleteComment(comment._id)"
                 >
                   Delete
                 </button>
-              </ng-container> -->
+              </ng-container>
             </li>
           </ng-container>
           <ng-template #noComments><li>No comments yet...</li></ng-template>
