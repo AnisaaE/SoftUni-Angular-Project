@@ -4,17 +4,19 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { GlobalLoaderComponent } from './global-loader/global-loader.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    GlobalLoaderComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedModule,
   ],
-  exports:[FooterComponent, NavigationComponent]
+  exports:[FooterComponent, NavigationComponent, GlobalLoaderComponent]
 })
 export class CoreModule { }

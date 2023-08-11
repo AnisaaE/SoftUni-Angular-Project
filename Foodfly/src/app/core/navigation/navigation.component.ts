@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
+import { GlobalLoaderService } from '../global-loader/global-loader.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,7 +10,9 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class NavigationComponent {
    loading = false;
-    constructor(private userService: UserService, private router: Router) {}
+    constructor(private userService: UserService, 
+      private router: Router,
+      private globalLoaderService: GlobalLoaderService) {}
   
     get isLoggedIn(): boolean {
       return this.userService.isLogged;
@@ -20,14 +23,14 @@ export class NavigationComponent {
     }
   
 logout(): void {
-  this.loading = true;
+  this.globalLoaderService.showLoader();
   this.userService.logout().subscribe({
     next: () => {
-      this.loading = false;
-      this.router.navigate(['/auth/login']);
+      this.globalLoaderService.hideLoader();
+      this.router.navigate(['/login']);
     },
     error: () => {
-      this.loading = false;
+      this.globalLoaderService.hideLoader();
       this.router.navigate(['/auth/login']);
     },
   });
