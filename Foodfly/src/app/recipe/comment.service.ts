@@ -24,5 +24,5 @@ addComment(recipeId:string, comment:any){
     return result;
 };
 
-deleteComment(commentId:string) {this.http.delete(`${this.baseUrl}/${commentId}`);}
+deleteComment(commentId:string):any{this.http.delete(`${this.baseUrl}/${commentId}`);}
 }

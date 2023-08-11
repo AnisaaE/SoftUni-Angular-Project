@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/types/recipe';
 import { RecipeService } from '../recipe.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
 import { CommentService } from '../comment.service';
 
@@ -12,7 +12,7 @@ import { CommentService } from '../comment.service';
 })
 export class DetailComponent implements OnInit{
   
-  isOpen:boolean = false
+  showChild:boolean = false
   isOwner?:boolean;
   recipe:Recipe | null = null
   isAuth:boolean=this.userService.isLogged
@@ -22,12 +22,13 @@ export class DetailComponent implements OnInit{
     private recipeServer: RecipeService,
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
-    private commentService: CommentService
+    private commentService: CommentService,
+    private router:Router
     ){
     }
  id:any = this.activatedRoute.snapshot.params['recipeId']
   ngOnInit(): void {
-        this.isOpen= this.recipeServer.isOpen
+       
     this.fetchRecipe();  
   }
 
@@ -42,10 +43,26 @@ export class DetailComponent implements OnInit{
     });
   }
  confirmationDelete():void{
-   this.recipeServer.isOpen=true
+  this.showChild = !this.showChild;
+ }
+ onDeleteComment(id:string){
+  this.commentService.deleteComment(id)
  }
 
- onDeleteComment(id:string){
-  this.commentService.deleteComment(id);
- }
+ getFormattedTime(timestamp: any): string {
+  const currentDate = new Date();
+  const commentDate = new Date(Number(timestamp));
+  const elapsedMilliseconds = currentDate.getTime() - commentDate.getTime();
+
+  if (elapsedMilliseconds < 60000) { // Less than 1 minute
+    return 'Just now';
+  } else if (elapsedMilliseconds < 3600000) { // Less than 1 hour
+    return Math.floor(elapsedMilliseconds / 60000) + ' mins ago';
+  } else if (elapsedMilliseconds < 86400000) { // Less than 1 day
+    return Math.floor(elapsedMilliseconds / 3600000) + ' hrs ago';
+  } else {
+    return Math.floor(elapsedMilliseconds / 86400000) + ' days ago';
+  }
+}
+
 }

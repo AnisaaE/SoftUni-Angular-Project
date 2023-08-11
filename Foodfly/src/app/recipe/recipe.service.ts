@@ -8,6 +8,7 @@ import { environment } from 'src/enviroments/enviroment';
   providedIn: 'root'
 })
 export class RecipeService {
+  recipes:any
   private appUrl = 'http://localhost:3030/data/recipes';
   constructor(private http: HttpClient) { }
  
@@ -30,3 +31,7 @@ export class RecipeService {
 
   isOpen: boolean= false
 }
+// const getTypeRecipes = (type:string) => {
+//   return recipes.filter((recipe) => recipe.type === type);
+// };
+

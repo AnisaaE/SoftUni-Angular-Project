@@ -1,1 +1,30 @@
-<p>profile works!</p>
+<div class="profile">
+    <div class="profile-data">
+      <div class="profile_img">
+        <div class="image">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="img8" />
+        </div>
+      </div>
+      <div class="personal">
+        <div class="edit">
+          <p>{{ username }}</p>
+        </div>
+        <div class="data">
+          <span>{{ userRecipes.length }}</span>
+          <p>recipies</p>
+        </div>
+        <p class="email">{{ email }}</p>
+      </div>
+    </div>
+  
+    <div class="recipes-photos">
+      <div class="recipes-photo" *ngFor="let x of userRecipes">
+        <a [routerLink]="['/catalog', x._id]">
+          <img src="{{ x.image }}" alt="recipe img" />
+        </a>
+      </div>
+    </div>
+  
+    <h3 class="no-articles" *ngIf="userRecipes.length === 0">No articles yet</h3>
+  </div>
+  

@@ -7,6 +7,7 @@ export interface Recipe {
     timing: string;
     portions: string;
     preparation: string;
+    state: string;
     ingredients: string;
     _createdOn?: number;
     comments?: Comment[];

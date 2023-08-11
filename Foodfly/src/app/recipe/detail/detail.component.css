@@ -233,3 +233,30 @@ box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 12px 8px 15
     color: #fff;
     text-decoration: none;
   }
+
+  /* Add this CSS to enhance your comments section */
+
+.active-recipe__comment-timestamp {
+  font-size: 14px;
+  margin-left: 20px;
+  color: #777;
+}
+
+.active-recipe__delete-button_comment {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.active-recipe__delete-button_comment:hover {
+  background-color: #c9302c;
+}
+
+.active-recipe__delete-button_comment:focus {
+  outline: none;
+}

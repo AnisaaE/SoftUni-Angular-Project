@@ -1449,6 +1449,7 @@
         image: 'https://www.giallozafferano.com/images/228-22832/spaghetti-with-tomato-sauce_1200x800.jpg',
         timing: '60',
         portions: '4',
+        state:'normal',
         preparation:'To make spaghetti with tomato sauce, start by preparing the sauce. Pour the extra virgin olive oil in a pan with the peeled and halved garlic clove, so you can remove the core and make the scent more delicate. Cook for 2 minutes over high heat, add the peeled tomatoes and salt.',
         ingredients: 'spaghetti, tomato',
         _createdOn: 1617194210928,
@@ -1463,11 +1464,12 @@
         image: 'https://assets.marthastewart.com/styles/wmax-750/d47/roast-chicken-vegetables-potatoes-3e8b194b-0819/roast-chicken-vegetables-potatoes-3e8b194b-0819_hz.jpg?itok=UiGQxjuq',
         timing: '120',
         portions: '5',
+        state:'normal',
         preparation:'When you roast chicken in the oven, start the temperature high and turn it down straight away to seal in all the yummy juices. The starting temperature should be around 450°F then turn it down to 350°F to complete the cooking!',
         ingredients: 'chicken, potatos, butter, salt',
         _createdOn: 1617194295474,
-        comments:[{_ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',username:"Peter", recipeId: '126777f5-3277-42ad-b874-76d043b069cb', comment: 'Looks so delicious....', _createdOn: 1680987885841, _id: 'c1097506-9743-4116-8b6b-7bed2be0e2d2'},
-        {_ownerId: '35c62d76-8152-4626-8712-eeb963',username:"Mimi", recipeId: '126777f5-3277-42ad-b874-76d043b069cb', comment: 'Woow ', _createdOn: 1680987885841, _id: 'c1097506-9743-4116-8b6b-7bed2be0e2d2'}
+        comments:[{_ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',username:"Peter", recipeId: '126777f5-3277-42ad-b874-76d043b069cb', comment: 'Looks so delicious....', _createdOn: 1679328000000, _id: 'c1097506-9743-4116-8b6b-7bed2be0e2d2'},
+        {_ownerId: '35c62d76-8152-4626-8712-eeb963',username:"Mimi", recipeId: '126777f5-3277-42ad-b874-76d043b069cb', comment: 'Woow ', _createdOn: 1691791677075, _id: 'c1097506-9743-4116-8b6b-7bed2be0e2d2'}
       ]
       },
       "ff436770-76c5-40e2-b231-77409eda7a61": {
@@ -1477,6 +1479,7 @@
         type: 'Breakfast',
         image: 'https://www.allrecipes.com/thmb/xZIFcG-Cy02RTFY-zXFbAxhasjc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20334-Banana-Pancakes-mfs_02_1x2-8635f9feb00e4d20998e10c039e2c8ca.jpg',
         timing: '15',
+        state:'normal',
         portions: '6',
         preparation:"Combine your dry ingredients (flour, sugar, salt, baking powder) in one bowl and your wet ingredients (egg, milk, vegetable oil, mashed bananas) in another bowl. Add the dry ingredients to the bowl with the wet ingredients, then stir until they're incorporated. It's OK if your batter is slightly lumpy.",
         ingredients: 'flour, milk, sugar, eggs, banana',

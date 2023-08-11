@@ -17,7 +17,7 @@ export class CreateComponent {
     }
     
      const formData = {
-      ...form.value,
+      ...form.value, comments:[], state:'normal'
     };
     console.log(formData)
     this.recipeService.createRecipe(formData).subscribe(() => {

@@ -21,6 +21,7 @@ export class EditComponent {
     portions: "",
     preparation: "",
     ingredients: "",
+    state:'normal'
   }
   constructor(
      private recipeService: RecipeService,

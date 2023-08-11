@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { RecipeService } from '../../recipe.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,11 +8,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent {
+  @Input() visible = false;
 isOpen:boolean = this.recipeService.isOpen
    constructor(
     private recipeService: RecipeService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
    ){}
 
    id = this.activatedRoute.snapshot.params['recipeId'];
@@ -24,7 +25,8 @@ isOpen:boolean = this.recipeService.isOpen
     });
    }
    handleCancel(){
-    this.recipeService.isOpen = false;
+    this.visible = false;
+    
    }
   
 }

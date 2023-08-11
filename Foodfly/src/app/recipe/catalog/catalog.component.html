@@ -1,9 +1,9 @@
 <app-types-of-recipies/>
 <div class="catalog-main">
     <h2 class="recipe" class="title">All recipes</h2>
-    <div class="recipe-catalog">
+    <div class="recipe-catalog" >
         <div *ngFor="let recipe of recipes">
-            <div class="recipe-card">
+            <div class="recipe-card" [@recipeCardHover]="recipe.state" (mouseenter)="recipe.state = 'hovered'" (mouseleave)="recipe.state = 'normal'">
               <img [src]="recipe.image" alt="Recipe Image" />
               <h3 class="recipe-title">{{ recipe.title }}</h3>
               <a [routerLink]="'/catalog/' + recipe._id" class="recipe-button">Details</a>

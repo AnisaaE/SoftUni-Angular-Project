@@ -39,10 +39,11 @@
           >
             Delete
           </button>
-         <app-delete *ngIf = "isOpen"></app-delete>
+         
         </div>
       </ng-container>
-  
+   <app-delete [visible]="showChild" >
+  </app-delete>
       <div class="active-recipe__comments">
         <h2>Comments:</h2>
         <ul class="active-recipe__comment-list">
@@ -60,6 +61,9 @@
                   Delete
                 </button>
               </ng-container>
+
+               <span class="active-recipe__comment-timestamp">{{ getFormattedTime(comment._createdOn)}}</span>
+
             </li>
           </ng-container>
           <ng-template #noComments><li>No comments yet...</li></ng-template>

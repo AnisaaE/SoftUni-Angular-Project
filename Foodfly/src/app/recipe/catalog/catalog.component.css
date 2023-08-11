@@ -30,6 +30,9 @@
     flex-wrap: wrap;
     margin-top: 30px;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap:20px
   }
   .recipe h2 {
     text-align: center; 

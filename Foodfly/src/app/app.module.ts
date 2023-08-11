@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +33,8 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     HttpClientModule,
     RecipeModule,
     UserModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     AuthorizationInterceptorProvider
