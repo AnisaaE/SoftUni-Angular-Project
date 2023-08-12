@@ -3,7 +3,9 @@ import { Recipe } from 'src/app/types/recipe';
 import { RecipeService } from '../recipe.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
-import { CommentService } from '../comment.service';
+import { addComment, removeComment } from './comment.actions';
+
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-detail',
@@ -16,14 +18,13 @@ export class DetailComponent implements OnInit{
   isOwner?:boolean;
   recipe:Recipe | null = null
   isAuth:boolean=this.userService.isLogged
-
+  username: any;
   userId:any 
   constructor( 
     private recipeServer: RecipeService,
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
-    private commentService: CommentService,
-    private router:Router
+    private store: Store<{ comments: Comment[] }>,
     ){
     }
  id:any = this.activatedRoute.snapshot.params['recipeId']
@@ -37,19 +38,21 @@ export class DetailComponent implements OnInit{
     this.recipeServer.getRecipe(this.id).subscribe({
       next:(item) => {
       this.recipe= item;
-      this.userId = this.userService.user?._id
-      this.isOwner=  this.recipe._ownerId === this.userId
+      this.userId = this.userService.user?._id;
+      this.isOwner=  this.recipe._ownerId === this.userId;
+      this.username = this.userService.user?.username;
     }
     });
   }
  confirmationDelete():void{
   this.showChild = !this.showChild;
  }
- onDeleteComment(id:string){
-  this.commentService.deleteComment(id)
- }
 
- getFormattedTime(timestamp: any): string {
+ removeComment(commentId: string): void {
+  this.store.dispatch(removeComment({ commentId }));
+}
+
+getFormattedTime(timestamp: any): string {
   const currentDate = new Date();
   const commentDate = new Date(Number(timestamp));
   const elapsedMilliseconds = currentDate.getTime() - commentDate.getTime();
@@ -63,6 +66,5 @@ export class DetailComponent implements OnInit{
   } else {
     return Math.floor(elapsedMilliseconds / 86400000) + ' days ago';
   }
-}
-
-}
+};
+} 

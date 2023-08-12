@@ -4,7 +4,8 @@
       <textarea
         class="active-recipe__comment-input"
         name="comment"
-        ngModel
+        [ngModel]="newCommentText"
+  (ngModelChange)="handleCommentChange($event)"
         #commentInput="ngModel"
         placeholder="Add a comment"
         required

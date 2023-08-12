@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+
 import { CatalogComponent } from './catalog/catalog.component';
 import { DetailComponent } from './detail/detail.component';
 import { RouterModule } from '@angular/router';
@@ -10,6 +12,7 @@ import { CreateComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
 import { ImgUrlValidatorDirective } from './img-url-validator.directive';
 import { EditComponent } from './edit/edit.component';
+import { commentReducer } from './detail/comment.reducer';
 
 
 @NgModule({
@@ -24,7 +27,7 @@ import { EditComponent } from './edit/edit.component';
     EditComponent
   ],
   imports: [
-    CommonModule, RouterModule,FormsModule
+    CommonModule, RouterModule,FormsModule, StoreModule.forFeature('comment', commentReducer)
   ],
   exports:[CatalogComponent, DetailComponent]
 })

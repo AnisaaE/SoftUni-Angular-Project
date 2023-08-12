@@ -18,5 +18,6 @@ export interface Comment {
     comment?: string;
     _createdOn?: number;
     _id: string,
-    username: string
+    username: string;
+    CharacterData?:any
 }

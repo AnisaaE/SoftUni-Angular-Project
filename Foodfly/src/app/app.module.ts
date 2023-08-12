@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthorizationInterceptorProvider } from './app-interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { commentReducer } from './recipe/detail/comment.reducer';
 
 
 
@@ -29,6 +30,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    StoreModule.forRoot({ comment: commentReducer}),
     CoreModule,
     HttpClientModule,
     RecipeModule,

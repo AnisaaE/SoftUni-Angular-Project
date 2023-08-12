@@ -27,11 +27,11 @@ logout(): void {
   this.userService.logout().subscribe({
     next: () => {
       this.globalLoaderService.hideLoader();
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
     },
     error: () => {
       this.globalLoaderService.hideLoader();
-      this.router.navigate(['/auth/login']);
+      this.router.navigate(['/home']);
     },
   });
 }

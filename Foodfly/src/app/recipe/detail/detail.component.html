@@ -56,7 +56,7 @@
               <ng-container *ngIf="isOwner || comment._ownerId === userId">
                 <button
                   class="active-recipe__delete-button_comment"
-                 (click)="onDeleteComment(comment._id)"
+                 (click)="removeComment(comment._id)"
                 >
                   Delete
                 </button>
@@ -68,7 +68,7 @@
           </ng-container>
           <ng-template #noComments><li>No comments yet...</li></ng-template>
         </ul>
-        <app-comment *ngIf="isAuth"></app-comment>
+        <app-comment [recipe]="recipe" *ngIf="isAuth"></app-comment>
       </div>
     </div>
   </div>
