@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { ImgUrlValidatorDirective } from './img-url-validator.directive';
 import { EditComponent } from './edit/edit.component';
 import { commentReducer } from './detail/comment.reducer';
+import { RecipeRoutingModule } from './recipe-routing.module';
+import { FilterComponent } from './filter/filter.component';
+
 
 
 @NgModule({
@@ -24,10 +27,11 @@ import { commentReducer } from './detail/comment.reducer';
     DeleteComponent,
     CreateComponent,
     ImgUrlValidatorDirective,
-    EditComponent
+    EditComponent,
+    FilterComponent
   ],
   imports: [
-    CommonModule, RouterModule,FormsModule, StoreModule.forFeature('comment', commentReducer)
+    CommonModule, RouterModule,FormsModule, StoreModule.forFeature('comment', commentReducer), RecipeRoutingModule
   ],
   exports:[CatalogComponent, DetailComponent]
 })

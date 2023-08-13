@@ -1,0 +1,15 @@
+<div class="catalog-main">
+    <h2 class="recipe" class="title"> {{desiredType}} recipes</h2>
+    <div class="recipe-catalog" >
+        <div *ngFor="let recipe of filteredRecipes">
+            <div class="recipe-card" >
+              <img [src]="recipe.image" alt="Recipe Image" />
+              <h3 class="recipe-title">{{ recipe.title }}</h3>
+              <a [routerLink]="'/catalog/' + recipe._id" class="recipe-button">Details</a>
+            </div>
+          </div>
+
+        <h3 class="no-articles" *ngIf="filteredRecipes.length === 0">No articles yet</h3>
+    </div>
+</div>
+

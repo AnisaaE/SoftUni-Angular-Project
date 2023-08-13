@@ -10,6 +10,7 @@ import { DetailComponent } from './recipe/detail/detail.component';
 import { CreateComponent } from './recipe/create/create.component';
 import { EditComponent } from './recipe/edit/edit.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { FilterComponent } from './recipe/filter/filter.component';
 
 const routes: Routes = [
    {
@@ -19,9 +20,11 @@ const routes: Routes = [
 },
 { path: 'home', component: HomeComponent },
 { path: 'catalog', component: CatalogComponent },
-{path:'catalog/:recipeId' , component:DetailComponent},
-{path:'catalog/:recipeId/edit' , component:EditComponent},
-{ path: 'create', component: CreateComponent },
+{ path: 'catalog/:recipeId', component: DetailComponent },
+{ path: 'catalog/:recipeId/edit', component: EditComponent},
+{ path: 'catalog/type/:type', component: FilterComponent},
+
+{ path: 'create', component: CreateComponent},
 
 
 { path: 'about', component: AboutComponent },
